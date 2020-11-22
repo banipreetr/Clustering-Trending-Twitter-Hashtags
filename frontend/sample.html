@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trending Hashtags</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="mystyle.css">
+    </head>
+    <body>
+    <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">
+          <img src="Twitter bird.png" width="30" alt="">
+        </a>
+    </nav>
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <a class="twitter-timeline" href="https://twitter.com/Twitter?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+          <div class="col-sm-6">
+            <h1 style="text-align: center; color: #FFFFFF;">Trending Hashtags</h1>
+            <div id="hashtags" style="margin-left: 30px; margin-right: 30px;">
+            </div>        
+          </div>   
+        </div>
+      </div>
+</body>
+<script>
+    var obj = [[{
+    "name" : "#Hi",
+    "tweet_volume" : 3
+    }],
+  [{
+    "name" : "#Bye",
+    "tweet_volume" : 4
+  }]];
+  axios.post("http://d9988a9be5e6.ngrok.io/trendingtweets/")
+  axios.post("http://d9988a9be5e6.ngrok.io/trendingtweets/", {"region" : "usa"})
+  .then(function (response) {
+    console.log(response);
+    $( document ).ready(function() {
+        console.log( "ready!" );
+        $.each(response.data, function(index,tweet) {
+            let name = "";
+            for (var i = 0; i < tweet.length; i++) {
+                console.log(tweet[i].name, " ", name);
+                name = name.concat(tweet[i].name, ",  ");
+            }
+            console.log("^^^^^^^^^^^", name);
+            var style = getStyle(tweet[0].tweet_volume);
+            $('#hashtags').append (
+                ' <h4>' + name + '</h4> <div class="w3-light-grey w3-tiny"> <div class="w3-container ' + style + ' myBar" style="width:'+ tweet[0].tweet_volume+'%"> .</div> </div> <br/>'  
+            );
+            // console.log(tweet.name);
+        });
+    });
+  });
+  
+  function getStyle(percent) {
+    var color = "red";
+    if (percent <= 20)
+        color = "green";
+    else if (percent <= 40)
+        color = "lime";
+    else if (percent <= 60)
+        color = "yellow";
+    else if (color <= 80)
+        color = "orange";
+    return "w3-"+color; 
+  }
+</script>

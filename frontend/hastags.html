@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
+<body>
+
+<div class="w3-container">
+  <h2>Trending Hashtags</h2>
+  <button class="w3-button w3-green" onclick="move()">View Top Hashtags</button> 
+  <div class="hashtags">
+    <!-- <div class="w3-light-grey hashtag">
+      <div id="myBar" class="w3-green myBar" style="height:24px;width:0"></div>
+    </div> -->
+  </div>
+</div>
+
+<script>
+function move() {
+  // axios.post("http://d9988a9be5e6.ngrok.io/trendingtweets/")
+  // axios.post("http://d9988a9be5e6.ngrok.io/trendingtweets/", {"region" : "usa"})
+  // .then(function (response) {
+  //   console.log(response);
+  // });
+  var obj = [{
+    "name" : "#Hi",
+    "tweet_volume" : 3
+  },
+  {
+    "name" : "#Bye",
+    "tweet_volume" : 4
+  }];
+  var completelist= document.getElementsByClassName("hashtags");
+  completelist.innerHTML += "<li>Item " + "</li>";
+  // $.each(obj, function(index,tweet) {
+  //     $('#hashtags').append (
+  //       "<li>"+tweet.name+"</li>"      
+  //     );
+  //     console.log(tweet.name);
+  //     // $('#users .list').append('<li><h3 class="name">'+userName+'</h3></li>')
+  // });
+  // var elem = document.getElementsByClassName("myBar");   
+  // var width = 1;
+  // var id = setInterval(frame, 10);
+  // function frame() {
+  //   if (width >= 100) {
+  //     clearInterval(id);
+  //   } else {
+  //     width++; 
+  //     elem.style.width = width + '%'; 
+  //   }
+  // }
+  // function update_list(updated_users) {
+  // // clear the existing list
+  //   $('#hashtags .list li').remove();
+  //   $.each(updatedUsers, function(index,userName) {
+  //     $('#users .list').append('<li><h3 class="name">'+userName+'</h3></li>')
+  //   });
+  // }
+}
+</script>
+</body>
+</html> 
