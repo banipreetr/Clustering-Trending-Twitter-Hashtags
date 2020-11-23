@@ -12,7 +12,6 @@
 * We devised a solution, to clutter similar hashtags using their usage with other hashtags and improving this result using AI to check similarity.
 * The final product also works on similar hashtags written in different languages
 * To further improve user engagement we have added an intensity bar to show the intensity(number of tweets) for any given hashtag
-* 
 ## Instructions to use backend
 
 Before starting off with the project, there are some dependencies that need to be installed in order to make the project work flawlessly.
@@ -44,6 +43,8 @@ After installing everything mentioned above, we need to run the server. We can d
 This runs the server locally on ```127.0.0.1:8080```.
 We can make ```POST``` API requests using ```127.0.0.1:8080/trendingtweets/``` on Postman or the UI in which it is being used.
 This API request returns the cluistered hashtags in the form of JSON which is processed by frontend to show beautiful results.
+
+![alt text](Flochart.png)
 
 
 
