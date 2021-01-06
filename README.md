@@ -1,7 +1,7 @@
 # Redefining Trending Hashtags
 * Twitter provides an option to search for the latest trending hashtags, the objective is to create awareness about the recent trends, be it political, entertainment or sports.
 * Only Top 30 Recent trends are currently displayed, with the objective to bring only the most popular trends to the user.
-* 
+
 ## Problem Statement
 * Frequently it happens that people use 2-3 hashtags, for the same content to promote their campaign. In such cases instead of top 30 trends we see only 10-15 different trends. 
 * In case, the content relevant to us might not reach top 30 due to similar hashtag 
