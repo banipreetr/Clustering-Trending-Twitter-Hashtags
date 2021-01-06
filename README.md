@@ -18,17 +18,17 @@ Before starting off with the project, there are some dependencies that need to b
 
 In order to install python based libraries that make use of Twitter API under the hood, we need to install tweepy and twitter from pip using:
 
-```pip install tweepy```
-```pip install twitter```
+* ```pip install tweepy```
+* ```pip install twitter```
 
 
 Having done that, we need geoencoder (Python Library) to find longitude and latitude for given location. We install it using pip using:
 
-```pip install geoencoder```
+* ```pip install geoencoder```
 
 That done, we need to set up our NLP models before proceeding. We make use of Doc2Vec model which is already implemented using gensim. We install gensim for that using:
 
-```pip install gensim```
+* ```pip install gensim```
 
 The Doc2Vec makes use of pretrained models (English Wikipedia DBOW & Associated Press News DBOW) both of which can be found [here](https://github.com/jhlau/doc2vec).
 
@@ -38,7 +38,7 @@ The files of English Wikipedia DBOW are saved as ```doc2vec1``` and Associated P
 Finally, we need the django based rest api installed, instructions of which can be found [here](https://www.django-rest-framework.org/).
 
 After installing everything mentioned above, we need to run the server. We can do that using:
-```python manage.py runserver 0.0.0.0:8080```
+* ```python manage.py runserver 0.0.0.0:8080```
 
 This runs the server locally on ```127.0.0.1:8080```.
 We can make ```POST``` API requests using ```127.0.0.1:8080/trendingtweets/``` on Postman or the UI in which it is being used.
