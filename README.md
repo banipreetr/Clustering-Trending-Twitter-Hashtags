@@ -9,7 +9,7 @@
 
 ## Solution
 
-* We devised a solution, to clutter similar hashtags using their usage with other hashtags and improving this result using AI to check similarity.
+* We devised a solution, to cluster similar hashtags using their usage with other hashtags and improving this result using AI to check similarity.
 * The final product also works on similar hashtags written in different languages
 * To further improve user engagement we have added an intensity bar to show the intensity(number of tweets) for any given hashtag
 ## Instructions to use backend
